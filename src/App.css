@@ -30,3 +30,204 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+
+
+
+@-webkit-keyframes explosion {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  33% {
+    width: 0;
+    opacity: 0;
+  }
+  34% {
+    width: 10px;
+    opacity: 1.0;
+  }
+  40% {
+    width: 80px;
+    opacity: 1.0;
+  }
+  to {
+    width: 90px;
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes explosion {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  33% {
+    width: 0;
+    opacity: 0;
+  }
+  34% {
+    width: 10px;
+    opacity: 1.0;
+  }
+  40% {
+    width: 80px;
+    opacity: 1.0;
+  }
+  to {
+    width: 90px;
+    opacity: 0;
+  }
+}
+
+#stage {
+  position: relative;
+  height: 400px;
+  background: #000 url(/images/outerspace.jpg);
+  background-image: -webkit-linear-gradient(bottom, #017c0a, #014906 100px, rgba(0,0,0,1) 100px, rgba(0,0,0,0) 300px), url(/images/outerspace.jpg);
+  background-image: -moz-linear-gradient(bottom, #017c0a, #014906 100px, rgba(0,0,0,1) 100px, rgba(0,0,0,0) 300px), url(/images/outerspace.jpg);
+  background-image: -o-linear-gradient(bottom, #017c0a, #014906 100px, rgba(0,0,0,1) 100px, rgba(0,0,0,0) 300px), url(/images/outerspace.jpg);
+  background-image: -ms-linear-gradient(bottom, #017c0a, #014906 100px, rgba(0,0,0,1) 100px, rgba(0,0,0,0) 300px), url(/images/outerspace.jpg);
+  background-image: linear-gradient(bottom, #017c0a, #014906 100px, rgba(0,0,0,1) 100px, rgba(0,0,0,0) 300px), url(/images/outerspace.jpg);
+}
+
+.launcher {
+  position: absolute;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-duration: 4s;
+  -moz-animation-iteration-count: infinite;
+  background: red;
+  border-bottom: 3px solid yellow;
+}
+
+.launcher div {
+  position: absolute;
+  opacity: 0;
+  -webkit-animation-name: explosion;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: explosion;
+  -moz-animation-duration: 4s;
+  -moz-animation-iteration-count: infinite;
+  left: 3px;
+  top: 3px;
+  width: 10px;
+  height: 4px;
+  border-right: 4px solid yellow;
+  border-radius: 2px;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body{margin:0;height:100%;}
+canvas{
+    position:absolute;top:0;left:0;
+    /* background-image: linear-gradient(bottom, rgb(105,173,212) 0%, rgb(23,82,145) 84%);
+    background-image: -o-linear-gradient(bottom, rgb(105,173,212) 0%, rgb(23,82,145) 84%);
+    background-image: -moz-linear-gradient(bottom, rgb(105,173,212) 0%, rgb(23,82,145) 84%); */
+    /* background-image: -webkit-linear-gradient(bottom, rgb(105,173,212) 0%, rgb(23,82,145) 84%);
+    background-image: -ms-linear-gradient(bottom, rgb(105,173,212) 0%, rgb(23,82,145) 84%);
+    
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(105,173,212)),
+        color-stop(0.84, rgb(23,82,145))
+    ); */
+}
+
+
+
+.snow-container {
+  position: absolute;
+  height: 500px;
+  width: 100%;
+  max-width: 100%;
+  top: 0;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
+  background-color: black;
+}
+.snow {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+  -webkit-animation: snow linear infinite;
+  animation: snow linear infinite;
+}
+.snow.foreground {
+  background-image: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-large-075d267ecbc42e3564c8ed43516dd557.png");
+  -webkit-animation-duration: 15s;
+  animation-duration: 15s;
+}
+.snow.foreground.layered {
+  -webkit-animation-delay: 7.5s;
+  animation-delay: 7.5s;
+}
+.snow.middleground {
+  background-image: url(https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-medium-0b8a5e0732315b68e1f54185be7a1ad9.png);
+  -webkit-animation-duration: 20s;
+  animation-duration: 20s;
+}
+.snow.middleground.layered {
+  -webkit-animation-delay: 10s;
+  animation-delay: 10s;
+}
+.snow.background {
+  background-image: url(https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-small-1ecd03b1fce08c24e064ff8c0a72c519.png);
+  -webkit-animation-duration: 25s;
+  animation-duration: 25s;
+}
+.snow.background.layered {
+  -webkit-animation-delay: 12.5s;
+  animation-delay: 12.5s;
+}
+@-webkit-keyframes snow {
+  0% {
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+  }
+  100% {
+      -webkit-transform: translate3d(5%, 100%, 0);
+      transform: translate3d(5%, 100%, 0);
+  }
+}
+@keyframes snow {
+  0% {
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+  }
+  100% {
+      -webkit-transform: translate3d(5%, 100%, 0);
+      transform: translate3d(5%, 100%, 0);
+  }
+}
